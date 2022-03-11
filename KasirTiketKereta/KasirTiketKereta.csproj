@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7577493F-9AF1-4510-9BFA-A44A170FD6FD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KasirTiketKereta</RootNamespace>
+    <AssemblyName>KasirTiketKereta</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Asset_Code\GlobalVariable.cs" />
+    <Compile Include="Asset_Code\Tema.cs" />
+    <Compile Include="Controller\GerbongController.cs" />
+    <Compile Include="Controller\KasirController.cs" />
+    <Compile Include="Controller\KeteranganTiketController.cs" />
+    <Compile Include="Controller\LaporanKerjaController.cs" />
+    <Compile Include="Controller\LaporanPenjualanController.cs" />
+    <Compile Include="Controller\PelangganController.cs" />
+    <Compile Include="Controller\PesananController.cs" />
+    <Compile Include="Controller\RiwayatPemesananController.cs" />
+    <Compile Include="Controller\TiketController.cs" />
+    <Compile Include="Model\Context\DbContext.cs" />
+    <Compile Include="Model\Entity\Gerbong.cs" />
+    <Compile Include="Model\Entity\Kasir.cs" />
+    <Compile Include="Model\Entity\KeteranganTiket.cs" />
+    <Compile Include="Model\Entity\LaporanKerja.cs" />
+    <Compile Include="Model\Entity\LaporanPenjualan.cs" />
+    <Compile Include="Model\Entity\Pelanggan.cs" />
+    <Compile Include="Model\Entity\Pesanan.cs" />
+    <Compile Include="Model\Entity\RiwayatPemesanan.cs" />
+    <Compile Include="Model\Entity\Tiket.cs" />
+    <Compile Include="Model\Repository\GerbongRepository.cs" />
+    <Compile Include="Model\Repository\KasirRepository.cs" />
+    <Compile Include="Model\Repository\KeteranganTiketRepository.cs" />
+    <Compile Include="Model\Repository\LaporanPenjualanRepository.cs" />
+    <Compile Include="Model\Repository\LaporanKerjaRepository.cs" />
+    <Compile Include="Model\Repository\PelangganRepository.cs" />
+    <Compile Include="Model\Repository\PesananRepository.cs" />
+    <Compile Include="Model\Repository\RiwayatPemesananRepository.cs" />
+    <Compile Include="Model\Repository\TiketRepository.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmFirstLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmFirstLogin.Designer.cs">
+      <DependentUpon>FrmFirstLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Setting\FrmEditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Setting\FrmEditProfile.Designer.cs">
+      <DependentUpon>FrmEditProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Setting\FrmEntryKasir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Setting\FrmEntryKasir.Designer.cs">
+      <DependentUpon>FrmEntryKasir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Setting\FrmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Setting\FrmSettings.Designer.cs">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Laporan\FrmLaporan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Laporan\FrmLaporan.Designer.cs">
+      <DependentUpon>FrmLaporan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Laporan\FrmLaporanPenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Laporan\FrmLaporanPenjualan.Designer.cs">
+      <DependentUpon>FrmLaporanPenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Laporan\FrmRiwayatPemesanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Laporan\FrmRiwayatPemesanan.Designer.cs">
+      <DependentUpon>FrmRiwayatPemesanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Laporan\FrmLaporanKerja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Laporan\FrmLaporanKerja.Designer.cs">
+      <DependentUpon>FrmLaporanKerja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Pesan Tiket\FrmTambahPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Pesan Tiket\FrmTambahPelanggan.Designer.cs">
+      <DependentUpon>FrmTambahPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Pesan Tiket\FrmPesan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Pesan Tiket\FrmPesan.Designer.cs">
+      <DependentUpon>FrmPesan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmEntryKeteranganTiket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmEntryKeteranganTiket.Designer.cs">
+      <DependentUpon>FrmEntryKeteranganTiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmEntryPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmEntryPelanggan.Designer.cs">
+      <DependentUpon>FrmEntryPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmEntryPesanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmEntryPesanan.Designer.cs">
+      <DependentUpon>FrmEntryPesanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmEntryGerbong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmEntryGerbong.Designer.cs">
+      <DependentUpon>FrmEntryGerbong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmEntryTiket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmEntryTiket.Designer.cs">
+      <DependentUpon>FrmEntryTiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmReference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmReference.Designer.cs">
+      <DependentUpon>FrmReference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmKeteranganTiket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmKeteranganTiket.Designer.cs">
+      <DependentUpon>FrmKeteranganTiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmPelanggan.Designer.cs">
+      <DependentUpon>FrmPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmPesanan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmPesanan.Designer.cs">
+      <DependentUpon>FrmPesanan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmGerbong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmGerbong.Designer.cs">
+      <DependentUpon>FrmGerbong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmTiket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Reference\FrmTiket.Designer.cs">
+      <DependentUpon>FrmTiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Tambah Tiket\FrmEntryGerbong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Tambah Tiket\FrmEntryGerbong.Designer.cs">
+      <DependentUpon>FrmEntryGerbong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Tambah Tiket\FrmTambahGerbong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Tambah Tiket\FrmTambahGerbong.Designer.cs">
+      <DependentUpon>FrmTambahGerbong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu\Tambah Tiket\FrmTambahKeteranganTiket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu\Tambah Tiket\FrmTambahKeteranganTiket.Designer.cs">
+      <DependentUpon>FrmTambahKeteranganTiket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\FrmFirstLogin.resx">
+      <DependentUpon>FrmFirstLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Setting\FrmEditProfile.resx">
+      <DependentUpon>FrmEditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Setting\FrmEntryKasir.resx">
+      <DependentUpon>FrmEntryKasir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Setting\FrmSettings.resx">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Laporan\FrmLaporan.resx">
+      <DependentUpon>FrmLaporan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Laporan\FrmLaporanPenjualan.resx">
+      <DependentUpon>FrmLaporanPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Laporan\FrmRiwayatPemesanan.resx">
+      <DependentUpon>FrmRiwayatPemesanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Laporan\FrmLaporanKerja.resx">
+      <DependentUpon>FrmLaporanKerja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Pesan Tiket\FrmTambahPelanggan.resx">
+      <DependentUpon>FrmTambahPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Pesan Tiket\FrmPesan.resx">
+      <DependentUpon>FrmPesan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Reference\FrmEntryKeteranganTiket.resx">
+      <DependentUpon>FrmEntryKeteranganTiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Reference\FrmEntryPelanggan.resx">
+      <DependentUpon>FrmEntryPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Reference\FrmEntryPesanan.resx">
+      <DependentUpon>FrmEntryPesanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Reference\FrmEntryGerbong.resx">
+      <DependentUpon>FrmEntryGerbong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Reference\FrmEntryTiket.resx">
+      <DependentUpon>FrmEntryTiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Reference\FrmReference.resx">
+      <DependentUpon>FrmReference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Reference\FrmKeteranganTiket.resx">
+      <DependentUpon>FrmKeteranganTiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Reference\FrmPelanggan.resx">
+      <DependentUpon>FrmPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Reference\FrmPesanan.resx">
+      <DependentUpon>FrmPesanan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Reference\FrmGerbong.resx">
+      <DependentUpon>FrmGerbong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Reference\FrmTiket.resx">
+      <DependentUpon>FrmTiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Tambah Tiket\FrmEntryGerbong.resx">
+      <DependentUpon>FrmEntryGerbong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Tambah Tiket\FrmTambahGerbong.resx">
+      <DependentUpon>FrmTambahGerbong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu\Tambah Tiket\FrmTambahKeteranganTiket.resx">
+      <DependentUpon>FrmTambahKeteranganTiket.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DarkPurple.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DarkPurple1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_sign_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reference_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tiket_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laporan_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize-sign_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reference_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tiket_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laporan_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Light.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\light_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hacker.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hacker_mini.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
